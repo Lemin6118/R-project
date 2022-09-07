@@ -1,7 +1,7 @@
 install.packages("wordcloud")
 library(wordcloud)
 
-word <- c("ÀÎÃµ±¤¿ª½Ã","°­È­±º","¿ËÁø±º")
+word <- c("ì¸ì²œê´‘ì—­ì‹œ","ì„œìš¸ì‹œ","ê¸ˆì •ë™")
 frequency <- c(1000,500,30)
 
 wordcloud(word,frequency,colors=rainbow(length(word)))
