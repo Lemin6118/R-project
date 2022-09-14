@@ -1,10 +1,14 @@
 # R-project
 
-## 1주차
+#### 이민석
 
-R언어 기초 내용
+## 3주차 2022. 09. 14
 
-## 2주차
+참고 소스를 이용하여 크롤링
+데이터 인코딩 변경
+중첩반복문을 이용한 csv 파일 생성
+
+## 2주차 2022. 09 .07
 
 공공데이터 API XML
 http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade
@@ -18,10 +22,11 @@ library(wordcloud)
 
 R스튜디오 인코딩 UTF-8 로 수정 (git에서 한글깨져서 수정)
 
-## 3주차 
+## 1주차 2022. 08. 31
 
-참고 소스를 이용하여 크롤링
-중첩반복문을 이용한 csv 파일 생성
+R언어 기초 내용
+
+
 
 
 
