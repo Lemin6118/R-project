@@ -4,7 +4,7 @@
 
 # 4주차 2022. 09. 22
 
-## paste 와 paste0 차이   
+### paste 와 paste0 차이   
 빈 공백을 없애주는 작업이 포함되어 있다.
 ````
 paste("A","B","C",seq="")  -> "ABC" 
@@ -13,7 +13,7 @@ paste("A","B","C",seq="")  -> "ABC"
 ````
 
 
-## 크롤링 하여 파일 저장
+### 크롤링 하여 파일 저장
 
 "?" 로 조건절을 만든 후 각 조건에 해당하는 파라미터 삽입 후 url_list[]에 값을 넣어준다.
 ````
@@ -32,7 +32,7 @@ for(i in 1:nrow(loc)){
 }
 ````
 
-## Sys.sleep(0.1) 사용하는 이유
+### Sys.sleep(0.1) 사용하는 이유
 ````
 -> 기존 for문에 대한 처리가 완료된 후 작업을 하기 위하여 사용   
 -> 크롤링을 하며 무한히 웹에 접속하게되어 해당 서버가 해킹으로 감지할 우려를 방지
@@ -47,7 +47,7 @@ for(i in 1:nrow(loc)){
 
 # 2주차 2022. 09 .07
 
-## 공공데이터 API XML
+### 공공데이터 API XML
 http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade
 
 개인 인증키(encoder) 사용 및 Get 방식 조건 전달
