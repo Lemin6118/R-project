@@ -3,7 +3,7 @@
 ## 이민석
 
 ## 4wnck 2022. 09. 22
-paste 와 paste0 차이
+paste 와 paste0 차이   
 빈 공백을 없애주는 작업이 포함되어 있다.
 ````
 paste("A","B","C",seq="")  -> "ABC" 
