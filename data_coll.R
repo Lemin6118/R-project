@@ -49,11 +49,13 @@ library(XML)        # install.packages("XML")
 library(data.table) # install.packages("data.table")
 library(stringr)    # install.packages("stringr")
 
-raw_data <- list()
-root_Node <- list()
-total <- list()
+raw_data <- list()  # XML 파일 저장소
+root_Node <- list() # 거래 내역 추출 데이터 임시 저장
+total <- list()     # 거래 내역 정리 데이터 임시 저장
 
 dir.create("02_raw_data") # 새로운 폴더 만들기
+
+# 2단계 : 자료 요청 및 응답 받기
 
 for(i in 1:length(url_list)){
   raw_data[[i]] <- xmlTreeParse(url_list[i], useInternalNodes = TRUE,encoding = "utf-8")
