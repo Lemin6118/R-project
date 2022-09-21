@@ -1,5 +1,5 @@
 
-install.packages("rstudioapi")
+#install.packages("rstudioapi")
 
 setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
@@ -43,6 +43,7 @@ length(url_list)
 
 
 browseURL(paste0(url_list[1])) 
+
 
 library(XML)        # install.packages("XML")      
 library(data.table) # install.packages("data.table")
