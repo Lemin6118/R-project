@@ -10,6 +10,26 @@ paste("A","B","C",seq="")  -> "ABC"
 = paste("A","B","C") -> "ABC"
 
 ````
+
+
+크롤링 하여 파일 저장
+
+"?" 로 조건절을 만든 후 각 조건에 해당하는 파라미터 삽입 후 url_list[]에 값을 넣어준다.
+````
+for(i in 1:nrow(loc)){
+  for(j in 1:length(datelist)){ 
+    cnt <- cnt + 1 
+    url_list[cnt] <- paste0("http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade?",
+                            "LAWD_CD=", loc[i,1],
+                            "&DEAL_YMD=", datelist[j],
+                            "&numOfRows=", 100,
+                            "&serviceKey=", service_key) 
+  } 
+  Sys.sleep(0.1) 
+  msg <- paste0("[", i,"/",nrow(loc), "]  ", loc[i,3], " 의 크롤링 목록이 생성됨 => 총 [", cnt,"] 건")
+  cat(msg, "\n\n") 
+}
+````
 ## 3주차 2022. 09. 14
 
 참고 소스를 이용하여 크롤링
