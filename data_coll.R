@@ -52,9 +52,9 @@ library(stringr)    # install.packages("stringr")
 raw_data <- list()  # XML 파일 저장소
 root_Node <- list() # 거래 내역 추출 데이터 임시 저장
 total <- list()     # 거래 내역 정리 데이터 임시 저장
-
-dir.create("02_raw_data") # 새로운 폴더 만들기
-
+if(!dir.exists("./02_raw_data")){
+  dir.create("02_raw_data") # 새로운 폴더 만들기
+}
 # 2단계 : 자료 요청 및 응답 받기
 
 for(i in 1:length(url_list)){
@@ -97,8 +97,12 @@ for(i in 1:length(url_list)){
   
   path <- as.character(paste0("./02_raw_data/", region_nm, "_", month,".csv"))
   
-  write.csv(apt_bind, path)     # csv 저장
-  msg <- paste0("[", i,"/",length(url_list), "] 수집한 데이터를 [", path,"]에 저장 합니다.")
+  if(!file.exists(path)){
+    write.csv(apt_bind, path)     # csv 저장
+    msg <- paste0("[", i,"/",length(url_list), "] 수집한 데이터를 [", path,"]에 저장 합니다.")
+  }else{
+    msg <- paste0("[", i,"/",length(url_list), "] 수집한 데이터가 [", path,"]에 이미 존재 합니다.")
+  }
   
   cat(msg, "\n\n")
 } 
@@ -109,7 +113,9 @@ library(plyr)               # install.packages("plyr")
 apt_price <- ldply(as.list(paste0("./02_raw_data/", files)), read.csv) # 모든 파일 하나로 결합
 tail(apt_price, 2)  # 확인
 
-dir.create("./03_integrated")   # 새로운 폴더 생성
+if(!dir.exists("./03_integrated")){
+  dir.create("./03_integrated")   # 새로운 폴더 생성
+}
 save(apt_price, file = "./03_integrated/03_apt_price.rdata") # 저장
 write.csv(apt_price, "./03_integrated/03_apt_price.csv")   
 
