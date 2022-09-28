@@ -70,7 +70,7 @@ for(i in 1:length(url_list)){
   
   item_temp_dt <- data.table() 
   
-  Sys.sleep(.1)
+  #Sys.sleep(.1)
   
   for(m in 1:size){ 
     
