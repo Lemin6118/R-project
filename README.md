@@ -6,7 +6,7 @@
 
 이미 실행된 행동(폴더생성, 데이터 생성)에 대한 처리 추가
 
-if(!file.exists(path))
+if(!file.exists(path))   
 if(!dir.exists(path))
 
 
