@@ -2,6 +2,21 @@
 
 # 이민석
 
+# 6주차 2022. 10. 06
+
+자료 수집을 위한 크롤러 제작 단계 : 1단계에 -> 5단계
+
+### 자료 요청 후 응답
+''''
+for (i in 1:length(url_list)) {  # 요청 목록(url_list) 반복
+  raw_data[[i]] <- xmlTreeParse(url_list[i], useInternalNodes = TRUE,
+                                encoding = "utf-8")  # 결과 저장
+  root_Node[[i]] <- xmlRoot(raw_data[[i]])  # URL로 저장 후 XML로 파일을 추출
+''''
+
+추출 데이터 확인 -> 응답 내역 저장 -> 자료 통합
+
+
 # 5주차 2022. 09. 28
 
 컴파일 시 이미 실행된 행동(폴더생성, 데이터 생성)에 대한 처리 추가
