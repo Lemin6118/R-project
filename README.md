@@ -11,18 +11,19 @@
 apt_price <- apt_price %>% select(ymd, ym, year, code, addr_1, apt_nm,
                                   juso_jibun, price, con_year, area, floor, py, cnt)  # 컬럼 추출
 head(apt_price, 2)  # 자료 확인
-```
+
 - select() 함수는 데이터에서 필요한 변수만 추출하고 싶을 때 사용한다.
-````
+
 2. 전처리 데이터 저장
 
 setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 dir.create("./04_pre_process")  # 새로운 폴더 생성
 save(apt_price, file = "./04_pre_process/04_pre_process.rdata")  # 저장
 write.csv(apt_price, "./04_pre_process/04_pre_process.csv")
-```
+````
 
-1. 카카오 로컬 API 키
+````
+카카오 로컬 API 키
 - 카카오 개발자 사이트
   → https://developers.kakao.com
 
