@@ -4,7 +4,6 @@
 #-------------------------
   
 #---# [1단계: 데이터 불러오기]
-
 setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 load("./04_preprocess/04_preprocess.rdata")    # 주소 불러오기
 load("./05_geocoding/05_juso_geocoding.rdata") # 좌표 불러오기

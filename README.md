@@ -2,6 +2,27 @@
 
 # 이민석
 
+# 8주차 2022. 10. 26
+
+### 주소와 좌표 결합하기 
+  
+````
+ # [1단계: 데이터 불러오기]
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
+load("./04_preprocess/04_preprocess.rdata")    # 주소 불러오기
+load("./05_geocoding/05_juso_geocoding.rdata") # 좌표 불러오기
+
+ # [2단계: 주소 + 좌표 결합]
+library(dplyr)   # install.packages('dplyr')
+apt_price <- left_join(apt_price, juso_geocoding, 
+                       by = c("juso_jibun" = "apt_juso")) # 결합
+apt_price <- na.omit(apt_price)   # 결측치 제거
+````
+
+
+# 7주차 2022. 10. 19
+### 중간고사
+
 # 6주차 2022. 10. 12
 ###  전처리 데이터 저장
 - 2가지 단계를 시행필요
