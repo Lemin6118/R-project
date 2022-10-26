@@ -39,6 +39,34 @@ leaflet() %>%
 
  # [3단계: 지오 데이터프레임 저장] -> 기존 방식과 동일
 ````
+
+### 좌표가 포함된 데이터프레임 만들기 및 시각화
+````
+df <- structure(
+  list(longitude = c(128.6979, 153.0046, 104.3261, 124.9019, 
+                     126.7328, 153.2439, 142.8673, 152.689), 
+       latitude = c(-7.4197, -4.7089, -6.7541, 4.7817, 
+                    2.1643, -5.65, 23.3882, -5.571)),
+  .Names = c("coord_x", "coord_y"), class = "data.frame", row.names = c(NA, -8L))
+head(df)
+
+ # 2) 지오데이터프레임으로 변환
+
+library(sp)    
+coordinates(df) <- ~coord_x + coord_y   # 좌표값 할당(sp형)
+proj4string(df) <- "+proj=longlat +datum=WGS84 +no_defs" # 좌표계(CRS) 정의(sp형)
+library(sf)    # install.packages('sf')
+df <- st_as_sf(df)     # sp형 => sf형 변환
+head(df)
+
+ # 3) 지도 시각화 
+
+library(leaflet)  
+leaflet() %>% 
+  addTiles() %>% 
+  addCircleMarkers(data=df) 
+````
+
 # 7주차 2022. 10. 19
 ### 중간고사
 
