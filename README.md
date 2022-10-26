@@ -26,7 +26,7 @@ write.csv(apt_price, "./04_pre_process/04_pre_process.csv")
 카카오 로컬 API 키
 - 카카오 개발자 사이트
   → https://developers.kakao.com
-
+````
 # 6주차 2022. 10. 06
 
 자료 수집을 위한 크롤러 제작 단계 : 1단계에 -> 5단계
