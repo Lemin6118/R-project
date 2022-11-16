@@ -15,7 +15,7 @@ shinyApp(ui, server)  # 구성 3: 실행
 library(shiny)    
 runExample()                                  # 샘플 보여주기
 runExample("01_hello")                        # 샘플 실행하기
-```
+````
 
 # 11주차 2022. 11. 09
 
