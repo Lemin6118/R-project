@@ -2,7 +2,26 @@
 
 # 이민석
 
-# 8주차 2022. 10. 26
+# 12주차 2022. 11. 16
+````
+install.packages("shiny")                     # 인스톨
+library(shiny)                                # 라이브러리 등록
+ui <- fluidPage("사용자 인터페이스")          # 구성 1: ui
+server <- function(input, output, session){}  # 구성 2: server
+shinyApp(ui, server)  # 구성 3: 실행
+
+#---# [2단계: 샤이니가 제공하는 샘플 확인하기]
+
+library(shiny)    
+runExample()                                  # 샘플 보여주기
+runExample("01_hello")                        # 샘플 실행하기
+```
+
+# 11주차 2022. 11. 09
+
+# 10주차 2022. 11. 02
+
+# 9주차 2022. 10. 26
 
 ### [지오프레임] 1. 주소와 좌표 결합하기 
   
@@ -67,10 +86,10 @@ leaflet() %>%
   addCircleMarkers(data=df) 
 ````
 
-# 7주차 2022. 10. 19
+# 8주차 2022. 10. 19
 ### 중간고사
 
-# 6주차 2022. 10. 12
+# 7주차 2022. 10. 12
 ###  전처리 데이터 저장
 - 2가지 단계를 시행필요
 ````

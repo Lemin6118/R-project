@@ -4,7 +4,6 @@
 #------------------------
 
 #---# [1단계: 샤이니 기본구조의 이해]
-# 실행할 때 [Run App] 버튼을 누르지 말고 Ctrl + Enter(실행 단축키) 키를 사용하세요
 
 install.packages("shiny")  
 library(shiny)  
@@ -14,7 +13,6 @@ shinyApp(ui, server)  # 구성 3: 실행
 
 #---# [2단계: 샤이니가 제공하는 샘플 확인하기]
 
-library(shiny)    # 라이브러리 등록
 runExample()      # 샘플 보여주기
 runExample("01_hello")   # 첫 번째 샘플 실행하기
 
@@ -25,7 +23,6 @@ head(faithful, 2)
 
 #---# [3단계: 01_hello 샘플의 사용자 인터페이스 부분]
 
-library(shiny)       # 라이브러리 등록
 ui <- fluidPage(     # 사용자 인터페이스 시작: fluidPage 정의
   titlePanel("샤이니 1번 샘플"),  # 타이틀 입력
   #---# 레이아웃 구성: 사이드바 패널 + 메인패널 
